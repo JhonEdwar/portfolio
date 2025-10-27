@@ -14,9 +14,12 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/nbetuwbvh0pbtnls3gtx",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/wj5eazalvkx4hodj5no0",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/o7er7swghpgo5vkqsrmq",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/oigupljvmc3a2oghy8ot",
 
-        ]
+        ],
+        videoTest:[],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/bigpass/uzlvieddqtkeb5xrlhew"],
+        bg:"#DCECF3",
+   
     },
     { 
         id:'2', 
@@ -24,9 +27,8 @@ export const projectsMock = [
         thumbnail:"https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/pefetmein8wvgm9x7j8y",
         images:[
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/f8g5eakb1wpaaooed3mz",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/auyl8djw7tlrno6jqkmj",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/aklvzpq6mhv7z1xbt9bt",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/tzbinstw12njbzruy6kj",
+            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/hvicbunocf9sbhhzkrar",
+            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/unpvmqwgqrbljq6j3okc",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/oy7uqh4ga8wyuvg0ta7x",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/lbskewkyecqnjonq2gyx",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/jw41lg80hgdlrqnjcwgw",
@@ -36,7 +38,10 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/cosgrdog5wzvi73yfmmp",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/comparador/jj3c5wah9omzehso85sy",
 
-        ]
+        ],
+        videoTest:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/comparador/msobwglijvdi3m8tomak"],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/comparador/kjvy4pzetqfkgjybh0jr"],
+        bg:"#660166",
     },
     { 
         id:'3', 
@@ -45,8 +50,8 @@ export const projectsMock = [
         images:[
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/es8fsyp9rm6wjpnlrb0g",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/b3nkzvsxn3admokiocsf",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/qwne5dkuopfhjsnhvjyv",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/bwqlurfjq7asqm1kb7y6",
+            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/zlu7wejxgr0tpicygivy",
+            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/vswacus7scopwhhamuuu",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/tudsniqajhmknqydu6ey",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/w4klitmsub7trk01zl2u",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/vmwto7tdlghofd3kfkpr",
@@ -54,7 +59,10 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/cgovfq1077idxkcfdfg2",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/idartes/u0suyalc7aofxuce7yvk",
 
-        ]
+        ], 
+        videoTest:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/idartes/umhrzzbubetihtjmwvor"],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/idartes/ig5cq4wwjz2jjkvy8v2f"],
+        bg:"#4B3082",
     },
     { 
         id:'4', 
@@ -72,7 +80,10 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/presupuestos/vupfxdmcp38ohhstx1nc",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/presupuestos/obnfqasofvxpa4x5d95i",
 
-        ]
+        ],
+        videoTest:[],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/presupuestos/bbyiu4nb3bjwmvlakh1d"],
+        bg:"#E6E6E6",
     },
     { 
         id:'5', 
@@ -88,7 +99,10 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/caja-de-herramientas/ot5t20dmcxzbdzaw9psy",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/caja-de-herramientas/c12ktw1kd9l73yqqeqck",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/caja-de-herramientas/syrkyevcc9dirsytew5c",
-        ]
+        ],
+        videoTest:[],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/caja-de-herramientas/fucxsprjtjv0lnkllcqt"],
+        bg:"#3F1E3F",
     },
     { 
         id:'6', 
@@ -124,7 +138,10 @@ export const projectsMock = [
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/fab-lab/n1csjgly8rezo1qeqe0k",
            
 
-        ]
+        ],
+        videoTest:[],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/fab-lab/ctvpqdlppogjqtm2e50g"],
+        bg:"#2D2D54",
     },
     { 
         id:'7', 
@@ -133,10 +150,13 @@ export const projectsMock = [
         images:[
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/roche/rsui17lcpuxral0jo67d",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/roche/qilwndeynrrkgwvdy9yl",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/roche/fbm5ixjzirl20lwtogia",
             "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/roche/wcyfivkawbabxupiencq",
 
-        ]
+        ],
+        videoTest:[],
+        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/roche/etis96xhbcj3qvs5sbpa"],
+        bg:"#001822",
     },
     
 ]
+
