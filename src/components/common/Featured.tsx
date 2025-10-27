@@ -1,12 +1,13 @@
-import React,{ useState, useEffect } from 'react'
+import { useState} from 'react'
 import { motion, AnimatePresence  } from "framer-motion";
-import { projectsMock } from '../../projectsMock';
+import { projectsMock } from '../../mock/projectsMock';
+// import { devProjectsMock } from '../../mock/devProjectsMock';
 import { Link } from 'react-router-dom';
 
 
 const Featured = () => {
 
-  const [hoveredId, setHoveredId] = useState(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
 
 
   return (
@@ -91,3 +92,6 @@ const Featured = () => {
 }
 
 export default Featured
+
+
+// *

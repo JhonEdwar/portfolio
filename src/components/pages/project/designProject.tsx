@@ -1,9 +1,10 @@
 // import React from 'react'
 import { useParams } from 'react-router-dom'
-import { projectsMock } from '../../../projectsMock';
+import { projectsMock } from '../../../mock/projectsMock';
 // import { div } from 'framer-motion/client';
 
-function Project() {
+
+const DesignProject=()=>{
     const { id } = useParams<{ id: string }>();
     const item= projectsMock.find((item)=>item.id === id)
 
@@ -48,4 +49,4 @@ function Project() {
   )
 }
 
-export default Project
+export default DesignProject
