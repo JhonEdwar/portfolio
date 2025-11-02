@@ -10,25 +10,6 @@ import Footer from '../../common/Footer';
 
 const Home = () => {
 
-  // const scrollRef = useRef<HTMLDivElement  | null>(null);
-  // const scrollInstance = useRef<LocomotiveScroll | null>(null);
-
-  // useEffect(() => {
-  //   if (!scrollRef.current) return;
-
-  //   scrollInstance.current = new LocomotiveScroll({
-  //     el: scrollRef.current,
-  //     smooth: true,
-  //     // lerp: 0.1,
-  //   });
-
-  //   return () => {
-  //     if (scrollInstance.current) scrollInstance.current.destroy();
-  //   };
-  // }, []);
-
-
-
 
   return (
     <div

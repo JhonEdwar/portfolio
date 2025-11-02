@@ -1,6 +1,6 @@
 import { motion,useAnimation } from 'framer-motion';
 import React,{useEffect,useRef} from 'react'
-import { FaArrowUpLong } from "react-icons/fa6";
+// import { FaArrowUpLong } from "react-icons/fa6";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -13,7 +13,7 @@ const items = [
   {id:"#item-3", translateY: 0, delay: 0.8},
 ]
 
-function Hero() {
+const Hero=()=>{
   const wrapperRef = useRef(null);
   // const item1Ref = useRef(null);
   const controls = useAnimation();
