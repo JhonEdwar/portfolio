@@ -1,17 +1,20 @@
+const mockImage = import.meta.env.VITE_MOCK_IMAGE;
+const mockVideo = import.meta.env.VITE_MOCK_VIDEO;
+
 export const devProjectsMock = [
     { 
         id:'1', 
         label: "API tienda", 
-        thumbnail:"https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/ahmhw2vgztzzimd5jnxh",
+        thumbnail:  `${mockImage}bigpass/ahmhw2vgztzzimd5jnxh`,
         images:[
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/nvv0uibtvfcdobnzsoya",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/qs86meqs31rkwdqojrxt",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/pk7qyf5genfpzr4psrgb",
-            "https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/bigpass/bxj0ynuwatgi35pci3zz",
+            `${mockImage}bigpass/nvv0uibtvfcdobnzsoya`,
+            `${mockImage}bigpass/qs86meqs31rkwdqojrxt`,
+            `${mockImage}bigpass/pk7qyf5genfpzr4psrgb`,
+            `${mockImage}bigpass/bxj0ynuwatgi35pci3zz`,
 
         ],
         videoTest:[],
-        videoFinal:["https://res.cloudinary.com/kannon229/video/upload/f_auto:video,q_auto/v1/portfolio/bigpass/uzlvieddqtkeb5xrlhew"],
+        videoFinal:[`${mockVideo}bigpass/uzlvieddqtkeb5xrlhew`],
         bg:"#DCECF3",
         description:"Una API REST completa construida con **Node.js y Express** para un sistema de comercio electrónico robusto. Proporciona funcionalidades de autenticación, gestión de productos, carrito de compras, órdenes y más, con diferentes roles de usuario (buyer, business, admin).",
         tools:[
