@@ -68,9 +68,9 @@ const Hero=()=>{
           });
         }
       }
-  })
+    })
 
-  return () => {
+    return () => {
       scrollItems.kill();
     };
   })
