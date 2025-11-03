@@ -17,6 +17,7 @@ export const devProjectsMock = [
         videoFinal:[`${mockVideo}bigpass/uzlvieddqtkeb5xrlhew`],
         bg:"#DCECF3",
         description:"Una API REST completa construida con **Node.js y Express** para un sistema de comercio electrónico robusto. Proporciona funcionalidades de autenticación, gestión de productos, carrito de compras, órdenes y más, con diferentes roles de usuario (buyer, business, admin).",
+        githubLink:"https://github.com/JhonEdwar/portfolio",
         tools:[
             "tool 1", "tool 2", "tool 3"
         ]

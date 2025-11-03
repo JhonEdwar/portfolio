@@ -1,4 +1,4 @@
-// import React from 'react'
+import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { projectsMock } from '../../../mock/projectsMock';
 // import { div } from 'framer-motion/client';
@@ -7,6 +7,10 @@ import { projectsMock } from '../../../mock/projectsMock';
 const DesignProject=()=>{
     const { id } = useParams<{ id: string }>();
     const item= projectsMock.find((item)=>item.id === id)
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
     return (
     <div className='w-full bg-zinc-900 text-white'>
