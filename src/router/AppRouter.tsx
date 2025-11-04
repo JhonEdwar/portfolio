@@ -1,4 +1,3 @@
-import React from 'react'
 import {Routes, Route,Navigate} from 'react-router-dom'
 import Home from '../components/pages/home/Home.tsx'
 import DesignProject from '../components/pages/project/designProject.tsx'

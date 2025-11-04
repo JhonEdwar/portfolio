@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { devProjectsMock } from '../../../mock/devProjectsMock';
 import Button from '../../ui/Button';
@@ -22,7 +22,7 @@ const DevProject = () => {
     
     ScrollTrigger.getAll().forEach(st => st.kill());
 
-    // Configuración inicial
+    
     images.forEach((img, i) => {
       gsap.set(img, { 
         x: i === 0 ? '0%' : '100%',
@@ -41,9 +41,9 @@ const DevProject = () => {
         pinSpacing: true,
         anticipatePin: 1,
         snap: {
-          snapTo: 1 / (images.length - 1), // Snap a cada imagen
-          duration: { min: 0.2, max: 0.5 }, // Duración de la animación del snap
-          delay: 0.5, // Pequeño delay antes de hacer snap
+          snapTo: 1 / (images.length - 1), 
+          duration: { min: 0.2, max: 0.5 }, 
+          delay: 0.5, 
           ease: "power2.inOut"
         }
       }
@@ -53,7 +53,6 @@ const DevProject = () => {
     images.forEach((img, index) => {
       if (index === 0) return;
       
-      // Cada transición ocupa 1 segundo en el timeline
       mainTimeline
         .to(images[index - 1], { x: '-100%', ease: "none", duration: 1 }, index - 1)
         .to(img, { x: '0%', ease: "none", duration: 1 }, index - 1);

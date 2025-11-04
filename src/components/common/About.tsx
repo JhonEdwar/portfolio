@@ -1,5 +1,3 @@
-import React from 'react'
-
 const About = () => {
   return (
     <div  className='w-full h-[auto] py-14 px-20 bg-[#CDEA68] rounded-tl-3xl rounded-tr-3xl text-black'>

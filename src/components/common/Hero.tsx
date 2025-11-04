@@ -1,5 +1,5 @@
 import { motion,useAnimation } from 'framer-motion';
-import React,{useEffect,useRef} from 'react'
+import {useEffect,useRef} from 'react'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -14,7 +14,6 @@ const items = [
 
 const Hero=()=>{
   const wrapperRef = useRef(null);
-  // const item1Ref = useRef(null);
   const controls = useAnimation();
 
   useEffect(() => {
