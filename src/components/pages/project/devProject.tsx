@@ -11,49 +11,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DevProject = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
     const images = gsap.utils.toArray<HTMLImageElement>("#container-img img");
     
-    // Limpiar animaciones previas
     ScrollTrigger.getAll().forEach(st => st.kill());
 
-    // Configurar todas las imágenes como invisibles excepto la primera
-    images.forEach((img, index) => {
-      if (index > 0) {
-        gsap.set(img, { opacity: 0 });
-      }
-    });
-
-    // Crear animación para cada transición de imagen
-    images.forEach((img, index) => {
-      if (index === 0) return; // La primera ya es visible
-
-      ScrollTrigger.create({
-        trigger: "#container-img",
-        start: () => `top+=${(index - 1) * 100}% top`,
-        end: () => `top+=${index * 100}% top`,
-        scrub: true,
-        onEnter: () => {
-          gsap.to(images[index - 1], { opacity: 0, duration: 0.5 });
-          gsap.to(img, { opacity: 1, duration: 0.5 });
-        },
-        onLeaveBack: () => {
-          gsap.to(img, { opacity: 0, duration: 0.5 });
-          gsap.to(images[index - 1], { opacity: 1, duration: 0.5 });
-        },
+    // Configuración inicial
+    images.forEach((img, i) => {
+      gsap.set(img, { 
+        x: i === 0 ? '0%' : '100%',
+        zIndex: i 
       });
     });
 
-    // Pin del contenedor
-    ScrollTrigger.create({
-      trigger: "#container-img",
-      start: "top top",
-      end: () => `+=${images.length * 100}%`,
-      pin: true,
-      pinSpacing: true,
+    // Crear el timeline principal con todas las transiciones
+    const mainTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#container-img",
+        start: "top top",
+        end: `+=${images.length * 100}%`,
+        scrub: 1,
+        pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
+        snap: {
+          snapTo: 1 / (images.length - 1), // Snap a cada imagen
+          duration: { min: 0.2, max: 0.5 }, // Duración de la animación del snap
+          delay: 0.5, // Pequeño delay antes de hacer snap
+          ease: "power2.inOut"
+        }
+      }
+    });
+
+    // Añadir cada transición al timeline
+    images.forEach((img, index) => {
+      if (index === 0) return;
+      
+      // Cada transición ocupa 1 segundo en el timeline
+      mainTimeline
+        .to(images[index - 1], { x: '-100%', ease: "none", duration: 1 }, index - 1)
+        .to(img, { x: '0%', ease: "none", duration: 1 }, index - 1);
     });
 
     return () => {
@@ -70,31 +73,25 @@ const DevProject = () => {
         <h2 className='text-stone-50 uppercase text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
           {item?.label}
         </h2>
-
-        <div className='w-full'>
-          <p className='text-lg font-[NeueMontreal] text-stone-400 font-light tracking-wide'>
-            {item?.description}
-          </p>
-        </div>
-
-        <div>
-          <Button
-            variant='filled'
-            size='L'
-            startIcon={<FaGithub />}
-            endIcon={<FaExternalLinkAlt />}
-            onClick={() => window.open(item?.githubLink, '_blank')}
-          >
-            View Project github
-          </Button>
-        </div>
+        <p className='text-lg font-[NeueMontreal] text-stone-400 font-light tracking-wide'>
+          {item?.description}
+        </p>
+        <Button
+          variant='filled'
+          size='L'
+          startIcon={<FaGithub />}
+          endIcon={<FaExternalLinkAlt />}
+          onClick={() => window.open(item?.githubLink, '_blank')}
+        >
+          View Project github
+        </Button>
       </div>
 
-      <div className='w-full h-[auto] py-14 px-20 bg-[#CDEA68] rounded-3xl text-black'>
+      <div className='w-full py-14 px-20 bg-[#CDEA68] rounded-3xl'>
         <div className='flex gap-3 flex-wrap justify-center'>
           {item?.tools?.map((tool, index) => (
-            <div key={index} className='py-[4px] px-[12px] border-2 border-zinc-900 rounded-full'>
-              <h3 className='text-xl font-[NeueMontreal] tracking-normal'>{tool}</h3>
+            <div key={index} className='py-1 px-3 border-2 border-zinc-900 rounded-full'>
+              <h3 className='text-xl font-[NeueMontreal]'>{tool}</h3>
             </div>
           ))}
         </div>
@@ -103,14 +100,14 @@ const DevProject = () => {
       <div 
         ref={containerRef} 
         id='container-img' 
-        className='h-screen w-full relative flex items-center justify-center'
+        className='h-screen w-full relative overflow-hidden flex items-center justify-center'
       >
         {item?.images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`${item.label} screenshot ${index + 1}`}
-            className='w-full h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+            className='h-full w-auto absolute object-contain'
           />
         ))}
       </div>

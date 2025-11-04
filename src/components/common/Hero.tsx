@@ -1,6 +1,5 @@
 import { motion,useAnimation } from 'framer-motion';
 import React,{useEffect,useRef} from 'react'
-// import { FaArrowUpLong } from "react-icons/fa6";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -84,11 +83,9 @@ const Hero=()=>{
                             <motion.div 
                             animate={controls}
                             initial={{ x: -70, rotate: 0 }}
-                            // initial={{x: -70}} 
-                            // animate={{x:0}}
-                            // transition={{ease:[0.76, 0,0.24,1], duration:1}}
+                            
                             className='mr-[10px]  w-[70px] h-[70px] top-[5px] relative '
-                            // className='mr-[1vw] w-[8vw] h-[5.7vw] rounded-md relative -top-[0.2vw]  bg-green-500'
+                            
                             >
                               <img className='h-full w-full' src="https://res.cloudinary.com/kannon229/image/upload/f_auto,q_auto/v1/portfolio/images%20portfolio/b7viq6rfkvqdfcmjlsgd" alt="emoji" />
                             </motion.div>
