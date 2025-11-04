@@ -1,7 +1,6 @@
-import React,{useEffect} from 'react'
+import {useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { projectsMock } from '../../../mock/projectsMock';
-// import { div } from 'framer-motion/client';
 
 
 const DesignProject=()=>{
