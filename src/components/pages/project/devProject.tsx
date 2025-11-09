@@ -48,6 +48,7 @@ const DevProject = () => {
         }
       }
     });
+    console.log(images);
 
     // Añadir cada transición al timeline
     images.forEach((img, index) => {
@@ -69,10 +70,10 @@ const DevProject = () => {
   return (
     <div className='w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-20 py-20 flex flex-col gap-20'>
       <div className='w-1/2 flex flex-col gap-5'>
-        <h2 className='text-stone-50 uppercase text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
+        <h2 className='text-zinc-50 uppercase text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
           {item?.label}
         </h2>
-        <p className='text-lg font-[NeueMontreal] text-stone-400 font-light tracking-wide'>
+        <p className='text-lg font-[NeueMontreal] text-zinc-400 font-light tracking-wide'>
           {item?.description}
         </p>
         <Button
@@ -86,11 +87,12 @@ const DevProject = () => {
         </Button>
       </div>
 
-      <div className='w-full py-14 px-20 bg-[#CDEA68] rounded-3xl'>
+      <div className='w-full py-14 px-20 bg-zinc-800 rounded-3xl'>
+        <h2 className='text-4xl pb-8 font-[NeueMontreal] text-zinc-400'>Tools</h2>
         <div className='flex gap-3 flex-wrap justify-center'>
           {item?.tools?.map((tool, index) => (
-            <div key={index} className='py-1 px-3 border-2 border-zinc-900 rounded-full'>
-              <h3 className='text-xl font-[NeueMontreal]'>{tool}</h3>
+            <div key={index} className='py-1 px-3 border-2 border-zinc-400 rounded-full'>
+              <h3 className='text-xl font-[NeueMontreal] text-zinc-400'>{tool}</h3>
             </div>
           ))}
         </div>
@@ -99,14 +101,14 @@ const DevProject = () => {
       <div 
         ref={containerRef} 
         id='container-img' 
-        className='h-screen w-full relative overflow-hidden flex items-center justify-center'
+        className='min-h-[50vh] sm:min-h-[60vh] lg:min-h-screen w-full  relative overflow-hidden flex items-center justify-center'
       >
         {item?.images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`${item.label} screenshot ${index + 1}`}
-            className='h-full w-auto absolute object-contain'
+            className='max-h-[50vh] sm:max-h-[60vh] lg:max-h-[900px] w-auto absolute object-contain pt-10'
           />
         ))}
       </div>

@@ -21,7 +21,7 @@ const Button = ({
   const baseStyles = 'flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50';
   
   const variantStyles = {
-    filled: 'bg-[#fff] text-zinc-900 hover:bg-[#DCDCDC] hover:cursor-pointer',
+    filled: 'bg-[#CDEA68] text-zinc-900 hover:bg-[#CAEC55] hover:cursor-pointer',
     outlined: 'border-2 border-[#CDEA68] text-[#CDEA68] hover:bg-[#CDEA68] hover:text-zinc-900'
   };
 
@@ -31,14 +31,16 @@ const Button = ({
     L: 'px-6 py-3 text-lg'
   };
 
+  const iconBase = 'flex items-center justify-center relative top-[1px]';
+
   return (
     <button 
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
       {...props}
     >
-      {startIcon && <span className={`${size === 'S' ? 'w-4 h-4' : size === 'L' ? 'w-6 h-6' : 'w-5 h-5'}`}>{startIcon}</span>}
+      {startIcon && <span className={`${iconBase} ${size === 'S' ? 'w-4 h-4' : size === 'L' ? 'w-6 h-6' : 'w-5 h-5'}`}>{startIcon}</span>}
       {children}
-      {endIcon && <span className={`${size === 'S' ? 'w-4 h-4' : size === 'L' ? 'w-6 h-6' : 'w-5 h-5'}`}>{endIcon}</span>}
+      {endIcon && <span className={`${iconBase} ${size === 'S' ? 'w-4 h-4' : size === 'L' ? 'w-6 h-6' : 'w-5 h-5'}`}>{endIcon}</span>}
     </button>
   );
 };
