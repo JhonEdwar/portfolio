@@ -18,7 +18,25 @@ export const devProjectsMock = [
         tools:[
             "MongoDB", "Express", "Node.js", "JWT", "Passport.js", 
             "Joi", "bcrypt", "Nodemailer", "Twilio" , "Swagger", 
-            "Mocha, Chai", "Winston"
+            "Mocha/ Chai / Supertest", "Winston"
+        ]
+    },
+        { 
+        id:'2', 
+        label: "Clone Spotify", 
+        thumbnail:  `${mockImage}clone-spotify/portada-spotify_1_zkuo2c.jpg`, 
+        images:[
+            `${mockImage}clone-spotify/clone-spotify-2_e8553p.png`,
+            `${mockImage}clone-spotify/clone-spotify-1_biyncs.png`,
+            `${mockImage}clone-spotify/clone-spotify-3_rlqnpy.png`,
+            `${mockImage}clone-spotify/clone-spotify-4_ng5ja9.png`,
+
+        ],
+        bg:"#DCECF3",
+        description:"A Spotify clone built with React that allows users to authenticate with their Spotify account and control music playback directly from the application.",
+        githubLink:"https://github.com/JhonEdwar/clone-spotify",
+        tools:[
+            "React", "React Context", "Spotify API", "React Router", "Axios", "Styled components", "SASS", "Webpack"
         ]
     },
    
