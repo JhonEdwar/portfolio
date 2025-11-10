@@ -8,19 +8,19 @@ const About = () => {
             <h2 className='text-5xl pb-8'>Design skills</h2>
             <div className='flex gap-3 flex-wrap justify-center'>
               {
-                ["Diseño de productos digitales",
-              "UX/UI",
+                ["Product Design",
+              "UX/UI Design",
               "Pensamiento resolutivo",
-              "Investigación con usuarios",
-              "Test de usabilidad",
-              "Artefactos de investigación",
-              "Diseño centrado en las personas",
-              "Métricas de experiencia",
-              "Prototipado (lo-fi / hi-fi)",
+              "User Research",
+              "Usability Testing",
+              "Research Artifacts",
+              "Human-Centered Design",
+              "Experience Metrics",
+              "Prototyping (lo-fi / hi-fi)",
               "Figma",
-              "Sistemas de diseño",
-              "Accesibilidad (WCAG)"].map((item, index) => (
-                
+              "Design Systems",
+              "Accessibility (WCAG)"].map((item, index) => (
+
                   <div key={index} className=' py-[4px] px-[12px] border-2 border-zinc-900 rounded-full w-'>
                     <h3 className=' text-xl font-[NeueMontreal] tracking-normal'>{item}</h3>
                   </div>            
@@ -37,10 +37,9 @@ const About = () => {
                   "React / Next.js",
                   "Node / Express",
                   "HTML5 / CSS / Js",
-                  "API REST / GraphQL",
+                  "API REST",
                   "PostgreSQL / MongoDB",
                   "Autenticación (JWT, OAuth)",
-                  "Docker",
                   "Testing (Jest / Vitest)",].map((item, index) => (
                 
                   <div key={index} className=' py-[4px] px-[12px] border-2 border-zinc-900 rounded-full w-'>
