@@ -9,8 +9,8 @@ const About = () => {
             <div className='flex gap-3 flex-wrap justify-center'>
               {
                 ["Product Design",
-              "UX/UI Design",
-              "Pensamiento resolutivo",
+              "User Experience (UX)",
+              "User Interface (UI)",
               "User Research",
               "Usability Testing",
               "Research Artifacts",
@@ -34,6 +34,7 @@ const About = () => {
             <div className='flex gap-3 flex-wrap justify-center'>
               {
                 [  "TypeScript",
+                  "JavaScript",
                   "React / Next.js",
                   "Node / Express",
                   "HTML5 / CSS / Js",

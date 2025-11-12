@@ -37,9 +37,9 @@ const Navbar = () => {
         </Link>
         <nav className="links flex gap-10 text-stone-100 align-center items-center">
             {items.map((link,index) =>
-             <a href={link.link} key={index} className={`text-[16px] capitalize font-light`}>{link.label}</a>
+             <a href={link.link} key={index} className={`text-[16px] capitalize font-light hover:text-[#CDEA68] transition-all duration-200`}>{link.label}</a>
              )}
-             <Button className="ml-32" variant='outlined' size='S' onClick={() => window.open("https://portfolio-jhoned.vercel.app/", '_blank')}>
+             <Button className="ml-32" variant='outlined' size='S' onClick={() => window.open("https://drive.google.com/file/d/11_Bb9eA1qfFp3NXFxOTrCkC62ghySgjV/view?usp=sharing", '_blank')}>
                Download CV
              </Button>
         </nav>

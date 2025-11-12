@@ -18,10 +18,10 @@ const Button = ({
   className = '',
   ...props 
 }: ButtonProps) => {
-  const baseStyles = 'flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50';
+  const baseStyles = 'flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 hover:cursor-pointer ';
   
   const variantStyles = {
-    filled: 'bg-[#CDEA68] text-zinc-900 hover:bg-[#CAEC55] hover:cursor-pointer',
+    filled: 'bg-[#CDEA68] text-zinc-900 hover:bg-[#E0FF75] ',
     outlined: 'border-2 border-[#CDEA68] text-[#CDEA68] hover:bg-[#CDEA68] hover:text-zinc-900'
   };
 

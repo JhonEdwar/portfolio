@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Footer from '../../common/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,6 +69,7 @@ const DevProject = () => {
   const item = devProjectsMock.find((item) => item.id === id);
 
   return (
+    <>
     <div className='w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-20 py-20 flex flex-col gap-20'>
       <div className='w-1/2 flex flex-col gap-5'>
         <h2 className='text-zinc-50 uppercase text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
@@ -112,7 +114,12 @@ const DevProject = () => {
           />
         ))}
       </div>
+
+      
+      
     </div>
+    <Footer />
+    </>
   );
 };
 
