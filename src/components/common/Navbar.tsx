@@ -39,7 +39,7 @@ const Navbar = () => {
             {items.map((link,index) =>
              <a href={link.link} key={index} className={`text-[16px] capitalize font-light hover:text-[#CDEA68] transition-all duration-200`}>{link.label}</a>
              )}
-             <Button className="ml-32" variant='outlined' size='S' onClick={() => window.open("https://drive.google.com/file/d/11_Bb9eA1qfFp3NXFxOTrCkC62ghySgjV/view?usp=sharing", '_blank')}>
+             <Button className="ml-32" variant='outlined' size='S' onClick={() => window.open("https://drive.google.com/file/d/1eeUmyHz-GUulC8dUJI_QaZqwG3qTzwbe/view?usp=sharing", '_blank')}>
                Download CV
              </Button>
         </nav>
