@@ -118,7 +118,7 @@ const Featured = () => {
                         }}
                       >
                         {item.label.split("").map((char, i) => (
-                          <span className="inline-block overflow-hidden" key={i}>
+                          <span className="inline-block overflow-hidden " key={i}>
                             <motion.span
                               variants={{
                                 hidden: { y: 50, opacity: 0 },
@@ -126,7 +126,7 @@ const Featured = () => {
                                 exit: { y: 50, opacity: 0 },
                               }}
                               transition={{ duration: 0.2, ease: [0.22, 2, 0.36, 1] }}
-                              className="inline-block"
+                              className="inline-block bg-[#ffffff]"
                             >
                               {char === " " ? "\u00A0" : char}
                             </motion.span>

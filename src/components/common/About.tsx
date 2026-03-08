@@ -13,7 +13,6 @@ const About = () => {
               "User Interface (UI)",
               "User Research",
               "Usability Testing",
-              "Research Artifacts",
               "Human-Centered Design",
               "Experience Metrics",
               "Prototyping (lo-fi / hi-fi)",
@@ -33,15 +32,16 @@ const About = () => {
             <h2 className='text-3xl md:text-4xl lg:text-5xl pb-4 md:pb-5'>Dev skills</h2>
             <div className='flex gap-2 md:gap-3 flex-wrap justify-center'>
               {
-                [  "TypeScript",
+                [  
                   "JavaScript",
+                  "TypeScript",
                   "React / Next.js",
                   "Node / Express",
-                  "HTML5 / CSS / Js",
-                  "API REST",
+                  "HTML5 / CSS",
+                  "API",
                   "PostgreSQL / MongoDB",
-                  "Autenticación (JWT, OAuth)",
-                  "Testing (Jest / Vitest)",].map((item, index) => (
+                  "Autenticación (JWT)",
+                  "Testing (Jest)",].map((item, index) => (
 
                   <div key={index} className='py-[4px] px-[12px] border-2 border-zinc-900 rounded-full'>
                     <h3 className='text-sm md:text-base lg:text-xl font-[NeueMontreal] tracking-normal'>{item}</h3>

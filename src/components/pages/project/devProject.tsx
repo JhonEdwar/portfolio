@@ -70,7 +70,7 @@ const DevProject = () => {
 
   return (
     <>
-    <div className='w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-5 py-10 md:px-12 md:py-16 lg:px-20 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-20'>
+    <div className='w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-5 py-10 md:px-12 md:py-16 lg:px-20 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-18'>
       <div className='w-full md:w-3/4 lg:w-1/2 flex flex-col gap-4 md:gap-5'>
         <h2 className='text-zinc-50 uppercase text-[10vw] md:text-[8vw] lg:text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
           {item?.label}
@@ -90,7 +90,7 @@ const DevProject = () => {
         </Button>
       </div>
 
-      <div className='w-full py-8 px-5 md:py-12 md:px-12 lg:py-14 lg:px-20 bg-zinc-800 rounded-2xl md:rounded-3xl'>
+      <div className='w-full py-8 px-5 md:py-10 md:px-12 lg:py-12 lg:px-20 bg-zinc-800 rounded-2xl md:rounded-3xl'>
         <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Tools</h2>
         <div className='flex gap-2 md:gap-3 flex-wrap justify-center'>
           {item?.tools?.map((tool, index) => (
@@ -101,20 +101,37 @@ const DevProject = () => {
         </div>
       </div>
 
-      <div
-        ref={containerRef}
-        id='container-img'
-        className='min-h-[40vh] md:min-h-[60vh] lg:min-h-screen w-full relative overflow-hidden flex items-center justify-center'
-      >
-        {item?.images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`${item.label} screenshot ${index + 1}`}
-            className='max-h-[40vh] md:max-h-[60vh] lg:max-h-[900px] w-auto absolute object-contain pt-6 md:pt-8 lg:pt-10'
-          />
-        ))}
+      <div  className='w-full flex flex-col items-center'>
+        {item?.video[0] && (
+          <div className='w-full flex flex-col justify-center py-10 px-5 md:py-16 md:px-12 lg:py-20 lg:px-20'>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Live Demo</h2>
+             <div className='items-center justify-center flex'>
+              <video controls className="w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]" src={item?.video[0]}></video>
+             </div>         
+          </div>
+        )}
       </div>
+
+      <div className='w-full flex flex-col'>
+        <div className='w-full flex flex-col justify-center pt-6 px-5 md:pt-8 md:px-12 lg:pt-10 lg:px-20'>
+          <h2 className=' text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>How it's built</h2>
+        </div>
+        <div
+          ref={containerRef}
+          id='container-img'
+          className='min-h-[40vh] md:min-h-[60vh] lg:min-h-screen w-full relative overflow-hidden flex items-center justify-center'
+        >
+              {item?.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`${item.label} screenshot ${index + 1}`}
+                  className='max-h-[40vh] md:max-h-[60vh] lg:max-h-[900px] w-auto absolute object-contain pt-6 md:pt-8 lg:pt-10'
+                />
+              ))}
+          </div>
+      </div>
+     
 
 
 
