@@ -1,142 +1,138 @@
 import { useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import { devProjectsMock } from '../../../mock/devProjectsMock';
-import Button from '../../ui/Button';
-import { FaGithub } from "react-icons/fa";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Footer from '../../common/Footer';
+import { devProjectsMock } from '../../../mock/devProjectsMock'
+import Button from '../../ui/Button'
+import { FaGithub } from "react-icons/fa"
+import { FaExternalLinkAlt } from "react-icons/fa"
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Footer from '../../common/Footer'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DevProject = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const { id } = useParams<{ id: string }>()
+  const item = devProjectsMock.find((i) => i.id === id)
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([])
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!item?.images?.length) return;
 
-    const images = gsap.utils.toArray<HTMLImageElement>("#container-img img");
-    
-    ScrollTrigger.getAll().forEach(st => st.kill());
+    const ctx = gsap.context(() => {
+      imageRefs.current.forEach((el) => {
+        if (!el) return;
 
-    
-    images.forEach((img, i) => {
-      gsap.set(img, { 
-        x: i === 0 ? '0%' : '100%',
-        zIndex: i 
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 48 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
       });
-    });
+    }, sectionRef);
 
-    // Crear el timeline principal con todas las transiciones
-    const mainTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#container-img",
-        start: "top top",
-        end: `+=${images.length * 100}%`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        snap: {
-          snapTo: 1 / (images.length - 1), 
-          duration: { min: 0.2, max: 0.5 }, 
-          delay: 0.5, 
-          ease: "power2.inOut"
-        }
-      }
-    });
-    console.log(images);
+    return () => ctx.revert();
+  }, [item]);
 
-    // Añadir cada transición al timeline
-    images.forEach((img, index) => {
-      if (index === 0) return;
-      
-      mainTimeline
-        .to(images[index - 1], { x: '-100%', ease: "none", duration: 1 }, index - 1)
-        .to(img, { x: '0%', ease: "none", duration: 1 }, index - 1);
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(st => st.kill());
-    };
-  }, []);
-
-  const { id } = useParams<{ id: string }>();
-  const item = devProjectsMock.find((item) => item.id === id);
+  if (!item) return null;
 
   return (
     <>
-    <div className='w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-5 py-10 md:px-12 md:py-16 lg:px-20 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-18'>
-      <div className='w-full md:w-3/4 lg:w-1/2 flex flex-col gap-4 md:gap-5'>
-        <h2 className='text-zinc-50 uppercase text-[10vw] md:text-[8vw] lg:text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
-          {item?.label}
-        </h2>
-        <p className='text-base md:text-lg font-[NeueMontreal] text-zinc-400 font-light tracking-wide'>
-          {item?.description}
-        </p>
-        <Button
-          variant='filled'
-          size='L'
-          startIcon={<FaGithub />}
-          endIcon={<FaExternalLinkAlt />}
-          onClick={() => window.open(item?.githubLink, '_blank')}
-        >
-          <span className='hidden md:inline'>View Project github</span>
-          <span className='md:hidden'>View on Github</span>
-        </Button>
-      </div>
+      <main
+        ref={sectionRef}
+        className="w-full min-h-[calc(100vh-68.8px)] bg-zinc-900 px-5 py-10 md:px-12 md:py-16 lg:px-20 lg:py-20 flex flex-col gap-10 md:gap-16 lg:gap-18"
+      >
 
-      <div className='w-full py-8 px-5 md:py-10 md:px-12 lg:py-12 lg:px-20 bg-zinc-800 rounded-2xl md:rounded-3xl'>
-        <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Tools</h2>
-        <div className='flex gap-2 md:gap-3 flex-wrap justify-center'>
-          {item?.tools?.map((tool, index) => (
-            <div key={index} className='py-1 px-3 border-2 border-zinc-400 rounded-full'>
-              <h3 className='text-sm md:text-base lg:text-xl font-[NeueMontreal] text-zinc-400'>{tool}</h3>
-            </div>
-          ))}
+        
+        <div className='w-full md:w-3/4 lg:w-1/2 flex flex-col gap-4 md:gap-5'>
+          <h2 className='text-zinc-50 uppercase text-[10vw] md:text-[8vw] lg:text-[6vw] leading-[.75] font-[FoundersGrotesk]'>
+            {item.label}
+          </h2>
+          <p className='text-base md:text-lg font-[NeueMontreal] text-zinc-400 font-light tracking-wide'>
+            {item.description}
+          </p>
+          <Button
+            variant='filled'
+            size='L'
+            startIcon={<FaGithub />}
+            endIcon={<FaExternalLinkAlt />}
+            onClick={() => window.open(item.githubLink, '_blank')}
+          >
+            <span className='hidden md:inline'>View Project github</span>
+            <span className='md:hidden'>View on Github</span>
+          </Button>
         </div>
-      </div>
 
-      <div  className='w-full flex flex-col items-center'>
-        {item?.video[0] && (
-          <div className='w-full flex flex-col justify-center py-10 px-5 md:py-16 md:px-12 lg:py-20 lg:px-20'>
+       
+        <div className='w-full py-8 px-5 md:py-10 md:px-12 lg:py-12 lg:px-20 bg-zinc-800 rounded-2xl md:rounded-3xl'>
+          <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Tools</h2>
+          <div className='flex gap-2 md:gap-3 flex-wrap justify-center'>
+            {item.tools?.map((tool, index) => (
+              <div key={index} className='py-1 px-3 border-2 border-zinc-400 rounded-full'>
+                <h3 className='text-sm md:text-base lg:text-xl font-[NeueMontreal] text-zinc-400'>{tool}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+       
+        {item.video?.[0] && (
+          <div className='w-full flex flex-col justify-center'>
             <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Live Demo</h2>
-             <div className='items-center justify-center flex'>
-              <video controls className="w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px]" src={item?.video[0]}></video>
-             </div>         
+            <div className='flex items-center justify-center'>
+              <div className="w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] rounded-2xl overflow-hidden bg-zinc-800">
+                <video
+                  controls
+                  className="w-full h-auto object-contain"
+                  src={item.video[0]}
+                />
+              </div>
+            </div>
           </div>
         )}
-      </div>
 
-      <div className='w-full flex flex-col'>
-        <div className='w-full flex flex-col justify-center pt-6 px-5 md:pt-8 md:px-12 lg:pt-10 lg:px-20'>
-          <h2 className=' text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>How it's built</h2>
-        </div>
-        <div
-          ref={containerRef}
-          id='container-img'
-          className='min-h-[40vh] md:min-h-[60vh] lg:min-h-screen w-full relative overflow-hidden flex items-center justify-center'
-        >
-              {item?.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${item.label} screenshot ${index + 1}`}
-                  className='max-h-[40vh] md:max-h-[60vh] lg:max-h-[900px] w-auto absolute object-contain pt-6 md:pt-8 lg:pt-10'
-                />
-              ))}
+        
+        {item.images?.length > 0 && (
+          <div className='w-full flex flex-col gap-10 md:gap-16'>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl font-[NeueMontreal] text-zinc-400'>How it's built</h2>
+            {item.images.map((src, i) => (
+              <div
+                key={i}
+                ref={el => { imageRefs.current[i] = el; }}
+                className={`flex flex-col gap-4 ${
+                  i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                } md:items-center md:gap-10`}
+              >
+                <div className="flex-1 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-700">
+                  <img
+                    src={src}
+                    alt={`${item.label} screenshot ${i + 1}`}
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
-      </div>
-     
+        )}
 
-
-
-    </div>
-    <Footer />
+      </main>
+      <Footer />
     </>
   );
 };

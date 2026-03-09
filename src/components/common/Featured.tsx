@@ -126,7 +126,7 @@ const Featured = () => {
                                 exit: { y: 50, opacity: 0 },
                               }}
                               transition={{ duration: 0.2, ease: [0.22, 2, 0.36, 1] }}
-                              className="inline-block bg-[#ffffff]"
+                              className="inline-block"
                             >
                               {char === " " ? "\u00A0" : char}
                             </motion.span>

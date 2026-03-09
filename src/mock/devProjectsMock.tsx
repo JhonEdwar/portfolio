@@ -5,7 +5,7 @@ export const devProjectsMock = [
     { 
         id:'1', 
         label: "API tienda", 
-        thumbnail:  `${mockImage}shop-api/portada-shop-api_hkketu.jpg`, 
+        thumbnail:  `${mockImage}shop-api/portada-shop-api_g3eqpq.jpg`, 
         images:[
             `${mockImage}shop-api/shop-api-img_2_oyicci.png`,
             `${mockImage}shop-api/shop-api-img_3_pj0qke.png`,
@@ -25,7 +25,7 @@ export const devProjectsMock = [
         { 
         id:'2', 
         label: "Clone Spotify", 
-        thumbnail:  `${mockImage}clone-spotify/portada-spotify_1_zkuo2c.jpg`, 
+        thumbnail:  `${mockImage}clone-spotify/portada-spotify_vdr1gp.jpg`, 
         images:[
             `${mockImage}clone-spotify/clone-spotify-2_e8553p.png`,
             `${mockImage}clone-spotify/clone-spotify-1_biyncs.png`,
@@ -44,7 +44,7 @@ export const devProjectsMock = [
     { 
         id:'3', 
         label: "UX Docs AI Assistant", 
-        thumbnail:  `${mockImage}UX-assistant/portada-ux-assistant_oxlcwr.jpg`, 
+        thumbnail:  `${mockImage}UX-assistant/portada-ux-assistant_vci1on.jpg`, 
         images:[
             `${mockImage}UX-assistant/chat-assist-ux_2_wy2sjx.png`,
             `${mockImage}UX-assistant/chat-assist-ux_1_emgwpu.png`,
@@ -61,7 +61,7 @@ export const devProjectsMock = [
     { 
         id:'4', 
         label: "Men's Clothing AI Agent", 
-        thumbnail:  `${mockImage}mens-clothing/portada-clothing_ugqiue.jpg`, 
+        thumbnail:  `${mockImage}mens-clothing/portada-clothing_sq5uyv.jpg`, 
         images:[
             `${mockImage}mens-clothing/clothing_1_ywlshb.png`,
             `${mockImage}mens-clothing/clothing_2_q1nlsl.png`,
