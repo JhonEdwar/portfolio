@@ -66,16 +66,28 @@ const DevProject = () => {
           <p className='text-base md:text-lg font-[NeueMontreal] text-zinc-400 font-light tracking-wide'>
             {item.description}
           </p>
-          <Button
-            variant='filled'
-            size='L'
-            startIcon={<FaGithub />}
-            endIcon={<FaExternalLinkAlt />}
-            onClick={() => window.open(item.githubLink, '_blank')}
-          >
-            <span className='hidden md:inline'>View Project github</span>
-            <span className='md:hidden'>View on Github</span>
-          </Button>
+            <Button
+              variant='filled'
+              size='L'
+              startIcon={<FaGithub />}
+              endIcon={<FaExternalLinkAlt />}
+              onClick={() => window.open(item.buttonPrimary.url, '_blank')}
+            >
+              <span className='md:inline'>{item.buttonPrimary.label}</span>
+            </Button>
+
+            {item.buttonSecondary && (
+                          <Button
+              variant='outlined'
+              size='M'
+              endIcon={<FaExternalLinkAlt />}
+              onClick={() => window.open(item.buttonSecondary.url, '_blank')}
+            >
+              <span className='md:inline'>{item.buttonSecondary.label}</span>
+            </Button>
+            )
+            }
+
         </div>
 
        
@@ -96,11 +108,14 @@ const DevProject = () => {
             <h2 className='text-2xl md:text-3xl lg:text-4xl pb-6 md:pb-7 lg:pb-8 font-[NeueMontreal] text-zinc-400'>Live Demo</h2>
             <div className='flex items-center justify-center'>
               <div className="w-full max-w-[600px] md:max-w-[800px] lg:max-w-[1000px] rounded-2xl overflow-hidden bg-zinc-800">
-                <video
-                  controls
-                  className="w-full h-auto object-contain"
-                  src={item.video[0]}
-                />
+                {item.video.map((videoUrl,index)=>(
+                  <video
+                    key={index}
+                    controls
+                    className="w-full h-[540px] object-contain"
+                    src={videoUrl}
+                  />
+                ))}
               </div>
             </div>
           </div>

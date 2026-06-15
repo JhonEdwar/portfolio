@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
     <div className='w-full md:w-auto text-stone-400 text-xs md:text-sm font-[NeueMontreal] px-5 pb-6 md:px-12 md:py-8 lg:px-20 whitespace-nowrap flex justify-start md:justify-end items-center'>
-      Página hecha por Jhon Edwar
+      Portfolio created by me, Jhon
     </div>
 
     </div>
