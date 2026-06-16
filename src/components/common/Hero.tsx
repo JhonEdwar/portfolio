@@ -95,7 +95,7 @@ const Hero=()=>{
                     <div className='w-full mt-6 md:mt-8 lg:mt-10'>
 
                         <p className='text-base md:text-lg font-[NeueMontreal] text-stone-400 font-light tracking-wide'>
-                        I'm a product designer with a technical mindset and a curious . I work across design and code to build scalable and user-centered experiences. I care about solving real problems — not just making things look good, but making them work better.
+                        I'm a product designer with a technical mindset and a curious. I work across design and code to build scalable and user-centered experiences. I care about solving real problems, not just making things look good, but making them work better.
                         </p>
                     </div>
 
